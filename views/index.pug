@@ -1,0 +1,65 @@
+doctype html
+html
+    head
+        title Profiler
+        script(src="/js/jquery-min.js")
+        link(href='https://fonts.googleapis.com/icon?family=Material+Icons', rel='stylesheet')
+        link(href="/css/materialize.css", rel="stylesheet")
+        script(src="/js/materialize.js")
+        script(src="/js/index.js")
+        style.
+            .parallax-container {
+                height: 500px;
+            }
+    body
+        .row
+            ul#dropdown1.dropdown-content
+                li
+                    a(href='/employer/register') Register
+                li
+                    a(href='/employer/login') Login
+            .navbar-fixed
+                nav
+                    .nav-wrapper
+                        a.brand-logo(href='/') &nbsp;&nbsp;Profiler
+                        ul.right.hide-on-med-and-down
+                            li
+                                a.dropdown-trigger(href='#!', data-target='dropdown1') Employer
+                                    i.material-icons.right arrow_drop_down
+                            li
+                                a(href='/users/register') Register
+                            li
+                                a(href='/users/login') Login &nbsp;&nbsp;
+            .parallax-container
+                .parallax
+                    img(src='images/photo2.jpeg')
+            .section.white
+                .row.container
+                    h3.header Find your dream job
+                    p.grey-text.text-darken-3.lighten-3
+                            | Welcome to Profiler. Someone is waiting to bring you a step closer to your dream. We are here to walk you down the path to your successful future.
+            .parallax-container
+                .parallax
+                    img(src='images/photo3.jpeg')            
+            .section.white
+                .row.container
+                    h3.header Flaunt your skill set
+                    p.grey-text.text-darken-3.lighten-3
+                            | Test your skills with us. Let us help you to evaluate yourself. Be the right candidate for the job.
+            .parallax-container
+                .parallax
+                    img(src='images/photo1.jpeg')            
+            .section.white
+                .row.container
+                    h3.header What are you waiting for ?
+                    p.grey-text.text-darken-3.lighten-3
+                            | Be there before anyone else. Start the journey towards a bright future today.
+            
+        footer.page-footer
+                .container
+                    p
+                        center
+                            |Made with &#10084; and lot's of &#x2615;
+                .footer-copyright
+                    
+

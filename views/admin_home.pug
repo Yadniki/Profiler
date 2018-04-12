@@ -1,0 +1,18 @@
+html
+    head
+        title Admin Home
+        script(src="/js/jquery-min.js")
+        link(href="/css/materialize.css", rel="stylesheet")
+        script(src="/js/materialize.js")
+        //- script(src="/js/login.js")
+
+    body
+        nav
+            .nav-wrapper
+                a.brand-logo(href='')  &nbsp;&nbsp;Profiler
+                ul.right.hide-on-med-and-down
+                    li #{user.username}
+                    li
+                        a(href='/questions/add') Add Questions
+                    li
+                        a(href='/users/logout') Logout

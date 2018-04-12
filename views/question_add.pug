@@ -1,0 +1,66 @@
+doctype html
+html
+    head
+        title Add Question
+        script(src="/js/jquery-min.js")
+        link(href="/css/materialize.css", rel="stylesheet")
+        script(src="/js/materialize.js")
+        script(src="/js/question_add.js")
+
+    body
+        .row
+            nav
+                .nav-wrapper
+                    a.brand-logo(href='/users/home') &nbsp;&nbsp; Profiler
+                    ul.right.hide-on-med-and-down
+                        li #{user.username}
+                        li
+                            a(href='/questions/add') Add Questions
+                        li
+                            a(href='/users/logout') Logout
+            br
+            form.col.s12(method="POST",action="/questions/add")
+                .row.card.container.col.s8.offset-s2
+                    .input-field.col.s12
+                        input#title.validate(name='title',type='text',required)
+                        label(for='title') Question title
+                    .input-field.col.s12
+                        select(name="technology",required)
+                            option(value='', disabled='', selected='') Choose your option
+                            option(value='c') C
+                            option(value='sql') SQL
+                            option(value='java') JAVA
+                        label Category
+                    .input-field.col.s12
+                        input#option-a.validate(name='option_a',type='text',required)
+                        label(for='option-a') Option A
+                    .input-field.col.s12
+                        input#option-b.validate(name='option_b',type='text',required)
+                        label(for='option-b') Option B
+                    .input-field.col.s12
+                        input#option-c.validate(name='option_c',type='text',required)
+                        label(for='option-c') Option C
+                    .input-field.col.s12
+                        input#option-d.validate(name='option_d',type='text',required)
+                        label(for='option-d') Option D
+                    //- .input-field.col.s12
+                    //-     input#answer.validate(name='answer',type='text',required)
+                    //-     label(for='answer') Answer
+                    .input-field.col.s12
+                        select(name="answer")
+                            option(value='', disabled='', selected='') Choose correct answer
+                            option(value='a') Option A
+                            option(value='b') Option B
+                            option(value='c') Option C
+                            option(value='d') Option D
+                        label Answer
+                    .input-field.col.s12
+                        select(name="difficulty")
+                            option(value='', disabled='', selected='') Choose your option
+                            option(value='low') low
+                            option(value='mid') medium
+                            option(value='high') high
+                        label Difficulty
+                    .input-field.col.s12
+                        input.btn(type='submit',value="add")
+               

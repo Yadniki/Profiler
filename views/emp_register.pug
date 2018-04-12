@@ -1,0 +1,45 @@
+doctype html
+html
+    head
+        title Employer Registration
+        script(src="/js/jquery-min.js")
+        link(href="/css/materialize.css", rel="stylesheet")
+        script(src="/js/materialize.js")
+        //- script(src="/js/register.js")
+
+    body
+        .row
+            nav
+                .nav-wrapper
+                    a.brand-logo(href='/') &nbsp;&nbsp;Employer Register
+                    ul.right.hide-on-med-and-down
+                        li
+                            a(href='/employer/login') Login&nbsp;&nbsp;
+            br
+            form.col.s12(method="POST",action="/employer/register")
+                .row.card.container.col.s6.offset-s3
+                    br
+                    .input-field.col.s12
+                        input#name.validate(name='name',type='text',required)
+                        label(for='name') Name
+                    .input-field.col.s12
+                        input#username.validate(name='username',type='text',required)
+                        label(for='username') Username
+                    .input-field.col.s12
+                        input#email.validate(name='email',type='email',required)
+                        label(for='email') Email
+                    .input-field.col.s12
+                        input#password.validate(name='password',type='password',required)
+                        label(for='password') Password
+                    .input-field.col.s12
+                        input#company.validate(name='company',type='text',required)
+                        label(for='company') Company 
+                    .input-field.col.s12
+                        input#location.validate(name='location',type='text',required)
+                        label(for='location') Location
+                    .input-field.col.s12
+                        input#contact.validate(name='contact',type='number',required)
+                        label(for='contact') Contact  
+                    .input-field.col.s12
+                        input.btn(type='submit',value="Register")
+               

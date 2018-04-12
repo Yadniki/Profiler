@@ -1,0 +1,53 @@
+doctype html
+html
+    head
+        title Quiz
+        script(src="/js/jquery-min.js")
+        link(href="/css/materialize.css", rel="stylesheet")
+        script(src="/js/materialize.js")
+        link(href="/css/quiz.css", rel="stylesheet")
+        script(src="/js/quiz.js")
+        
+        //- script(src="/js/login.js")
+
+    body
+        nav
+            .nav-wrapper
+                a.brand-logo(href='/users/home')  Attempt Your Quiz
+                ul.right.hide-on-med-and-down
+                    li #{user.username}
+                    li
+                        a(href='/users/logout') Logout
+        br
+        br
+
+        .row.container.col.s12.m8.offset-m2
+            form#quiz-form(method="POST")
+                p
+                   label.hide
+                        input.with-gap(type="radio",name=type,value=""+type,checked)
+                        span #{type} 
+                each quest, i in questions
+                    .question.card(data-id=quest._id)
+                        p
+                            h6 
+                                b Question #{i+1} : 
+                                | #{quest.title}
+                        p
+                            label
+                                input.with-gap(type="radio",name=quest._id,value="a",checked)
+                                span #{quest.option_a}
+                        p
+                            label
+                                input.with-gap(type="radio",name=quest._id,value="b")
+                                span #{quest.option_b}
+                        p
+                            label
+                                input.with-gap(type="radio",name=quest._id,value="c")
+                                span #{quest.option_c}
+                        p
+                            label
+                                input.with-gap(type="radio",name=quest._id,value="d")
+                                span #{quest.option_d}
+                .input-field
+                            input.btn(type='submit',value="Submit")          

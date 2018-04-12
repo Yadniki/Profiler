@@ -1,0 +1,44 @@
+doctype html
+html
+    head
+        title User Register
+        script(src="/js/jquery-min.js")
+        link(href="/css/materialize.css", rel="stylesheet")
+        script(src="/js/materialize.js")
+        script(src="/js/register.js")
+
+    body
+        .row
+            nav
+                .nav-wrapper
+                    a.brand-logo(href='/') &nbsp;&nbsp;Register
+                    ul.right.hide-on-med-and-down
+                        li
+                            a(href='/users/login') Login&nbsp;&nbsp;
+            br
+            br
+            form.col.s12(method="POST",action="/users/register")
+                .row.card.container.col.s6.offset-s3
+                    br
+                    .input-field.col.s12
+                        input#name.validate(name='name',type='text',required)
+                        label(for='name') Name
+                    .input-field.col.s12
+                        input#username.validate(name='username',type='text',required)
+                        label(for='username') Username
+                    .input-field.col.s12
+                        input#email.validate(name='email',type='email',required)
+                        label(for='email') Email
+                    .input-field.col.s12
+                        input#password.validate(name='password',type='password',required)
+                        label(for='password') Password
+                    .input-field.col.s12
+                        input#qualification.validate(name='qualification',type='text',required)
+                        label(for='qualification') Qualification 
+                    .input-field.col.s12
+                        input#dob.datepicker(name='dob',type='text',required)
+                        label(for='dob') Date Of Birth 
+                    .input-field.col.s12
+                        input.btn(type='submit',value="Register")
+                    br
+               

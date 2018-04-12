@@ -1,0 +1,48 @@
+doctype html
+html
+    head
+        title Candidates
+        script(src="/js/jquery-min.js")
+        link(href='https://fonts.googleapis.com/icon?family=Material+Icons', rel='stylesheet')
+        link(href="/css/materialize.css", rel="stylesheet")
+        script(src="/js/materialize.js")
+        script(src="/js/candidates.js")
+        
+    body
+        .row
+            nav
+                .nav-wrapper
+                    a.brand-logo(href='/employer/home')  Profiler
+                    ul.right.hide-on-med-and-down
+                        li #{user.name}
+                        li
+                            a(href='/employer/logout') Logout
+            br
+            br
+
+        .row
+            if no_users
+                h4.col.container.s10.offset-s1.center Sorry, No Candidates Found!!!
+            else
+                table.striped.centered.col.s10.offset-s1
+                    thead
+                        tr  
+                            th Name
+                            th 'C' Score
+                            th 'SQL' Score
+                            th 'JAVA' Score
+                            th Email
+                    tbody
+                        each pro, i in profile
+                            tr
+                                td.candidate-name 
+                                    a(href='/profile/'+users[i].name) #{users[i].name}
+                                td #{profile[i].score_c}
+                                td #{profile[i].score_sql}
+                                td #{profile[i].score_java}
+                                td.candidate-email #{users[i].email}
+                                    a.btn.send-email.right(href='#')
+                                        i.material-icons send
+
+
+

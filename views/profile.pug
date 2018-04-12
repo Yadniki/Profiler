@@ -1,0 +1,101 @@
+doctype html
+html
+  title Profile
+  meta(charset='UTF-8')
+  meta(name='viewport', content='width=device-width, initial-scale=1')
+  script(src="/js/jquery-min.js")
+  link(href="/css/materialize.css", rel="stylesheet")
+  script(src="/js/materialize.js")
+  script(src="/js/profile.js")
+  
+  link(rel='stylesheet', href='https://www.w3schools.com/w3css/4/w3.css')
+  link(rel='stylesheet', href='https://fonts.googleapis.com/css?family=Roboto')
+  link(rel='stylesheet', href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css')
+  //- Tried changing width param dynamically but failed
+  script.
+    function setBar(){
+      var score_c = parseInt(document.getElementById(scoreC).innerHTML());
+      console.log(score_c);
+      var score_sql = parseInt(document.getElementById(scoreSql).innerHTML());
+      console.log(score_sql);
+      var score_java = parseInt(document.getElementById(scoreJava).innerHTML());
+      console.log(score_java);
+      var widthA = (score_c / 5) * 100;
+      $('#scoreC').css({
+      'width': widthA + '%'
+      });
+      var widthB = (score_sql / 5) * 100;
+      $('#scoreSql').css({
+      'width': widthB + '%'
+      });
+      var widthC = (score_java / 5) * 100;
+      $('#scoreJava').css({
+      'width': widthC + '%'
+      });
+    }
+  style.
+    html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif}
+  body.w3-light-grey(onload='setBar()')
+    nav
+      .nav-wrapper
+        a.brand-logo(href='/users/home') &nbsp;&nbsp;Profile
+        ul.right.hide-on-med-and-down
+          li #{user.username}
+          li
+            a(href='/users/logout') Logout
+        br
+        br
+    // Page Container
+    .w3-content.w3-margin-top(style='max-width:1400px;')
+      // The Grid
+      .w3-row-padding
+        // Left Column
+        .w3-third
+          .w3-white.w3-text-grey.w3-card-4
+            .w3-container
+              h2 &nbsp;&nbsp;#{user.name}
+            .w3-container.w3-margin
+              p.w3-large
+                i.fa.fa-user.fa-fw.w3-margin-right.w3-large.w3-text-pink
+                | #{user.username}
+              p
+                i.fa.fa-envelope.fa-fw.w3-margin-right.w3-large.w3-text-pink
+                | #{user.email}
+              p
+                i.fa.fa-calendar.fa-fw.w3-margin-right.w3-large.w3-text-pink
+                | #{user.dob}
+              p
+                i.fa.fa-graduation-cap.fa-fw.w3-margin-right.w3-large.w3-text-pink
+                | #{user.education}
+              hr
+              br
+          br
+          // End Left Column
+        // Right Column
+        .w3-twothird
+          .w3-container.w3-card.w3-white.w3-margin-bottom
+            h2.w3-text-grey.w3-padding-16
+              i.fa.fa-asterisk.fa-fw.w3-margin-right.w3-xxlarge.w3-text-pink
+              | Skills
+            .w3-container
+              h4
+                p C 
+                .w3-light-grey.w3-round-xlarge.w3-small
+                  #scoreC.w3-container.w3-center.w3-round-xlarge.w3-pink(style="width:"+profile[0].score_c/5*100+"%;") #{profile[0].score_c/5*100}%
+              hr
+            .w3-container
+              h4
+                p SQL 
+                .w3-light-grey.w3-round-xlarge.w3-small
+                  #scoreSql.w3-container.w3-center.w3-round-xlarge.w3-pink(style="width:"+profile[0].score_sql/5*100+"%;") #{profile[0].score_sql/5*100}%
+              hr
+            .w3-container
+              h4
+                p JAVA 
+                .w3-light-grey.w3-round-xlarge.w3-small
+                  #scoreJava.w3-container.w3-center.w3-round-xlarge.w3-pink(style="width:"+profile[0].score_java/5*100+"%;") #{profile[0].score_java/5*100}%
+              br
+              br
+          // End Right Column
+        // End Grid
+      // End Page Containe

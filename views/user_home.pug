@@ -1,0 +1,43 @@
+doctype html
+html
+    head
+        title User Home
+        script(src="/js/jquery-min.js")
+        link(href="/css/materialize.css", rel="stylesheet")
+        script(src="/js/materialize.js")
+        //- script(src="/js/login.js")
+
+    body
+        nav
+            .nav-wrapper
+                a.brand-logo(href='')  Profiler
+                ul.right.hide-on-med-and-down
+                    li 
+                        a(href='/users/myprofile') #{user.username}
+                        //- a(href='/users/myprofile') #{req.session.user_id}
+                    li
+                        a(href='/users/myprofile') Profile
+                    li
+                        a(href='/users/logout') Logout
+        br
+        br
+        .row
+
+            a(href='/users/quiz/c')
+                #c-quiz.col.s12.m4
+                    .card
+                        .card-content.pink-text
+                            span.card-title 'C' Quiz
+                            p lets give a try for c.
+            a(href='/users/quiz/sql')
+                #sql-quiz.col.s12.m4
+                    .card
+                        .card-content.pink-text
+                            span.card-title 'Sql' Quiz
+                            p lets give a try for sql.
+            a(href='/users/quiz/java')
+                #java-quiz.col.s12.m4
+                    .card
+                        .card-content.pink-text
+                            span.card-title 'Java' Quiz
+                            p lets give a try for java.
